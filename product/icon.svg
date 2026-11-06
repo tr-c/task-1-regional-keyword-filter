@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- speech bubble representing social media text -->
+  <rect x="4" y="8" width="48" height="36" rx="6" ry="6" fill="#4f46e5"/>
+  <polygon points="14,44 8,56 24,44" fill="#4f46e5"/>
+  <!-- three text lines inside the bubble -->
+  <rect x="12" y="18" width="32" height="4" rx="2" fill="#ffffff" opacity="0.9"/>
+  <rect x="12" y="26" width="24" height="4" rx="2" fill="#a5f3fc" opacity="0.95"/>
+  <rect x="12" y="34" width="28" height="4" rx="2" fill="#ffffff" opacity="0.9"/>
+</svg>

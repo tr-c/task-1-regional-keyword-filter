@@ -1,0 +1,33 @@
+_ > nanoagent.plugin.v0001.ManifestConfig:
+id: regional-keyword-filter
+name: Regional Keyword Filter
+version: 0.1.0
+status: in-development
+spec: nanoagent.plugin/v0001
+
+runtime > nanoagent.plugin.v0001.RuntimeConfig:
+  type: mcp_stdio
+  command: [uv, run, --frozen, python, -m, plugin]
+
+permissions > nanoagent.plugin.v0001.PermissionsConfig:
+  network > nanoagent.plugin.v0001.NetworkConfig:
+    hosts: []
+  filesystem > nanoagent.plugin.v0001.FilesystemConfig:
+    write: [workspace]
+
+# one entry per contract.Tool; input/output classes come from contract.TOOLS
+tools > dict[contract.Tool, nanoagent.plugin.v0001.ToolConfig]:
+  filter_lines:
+    description: Read a text file from the workspace and return every line that contains the target keyword
+
+# one entry per contract.Task; input/output classes come from contract.TASKS
+tasks > dict[contract.Task, nanoagent.plugin.v0001.TaskConfig]:
+  regional-keyword-filter:
+    description: Extract all lines containing a sociolinguistic keyword from a social media text file
+    runner: tool
+    tools: [filter_lines]
+    reference: null
+    instructions: |-
+      Call filter_lines with file_path set to "social_media_sample.txt" and target set to the keyword
+      provided in the task input. Return every line from the file that contains the keyword as an exact
+      substring, in the order the lines appear in the file.

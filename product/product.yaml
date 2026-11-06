@@ -1,0 +1,13 @@
+_ > nanoagent.plugin.v0001.ProductConfig:
+tagline: "Find every dialect marker in a social media stream, instantly."
+summary: >-
+  Regional Keyword Filter is Task 1 of the Autono-Linguist evaluation suite.
+  Given a raw social media text file and a target sociolinguistic variable
+  (such as the Bay Area intensifier "hella"), the agent extracts every line
+  that contains it — ordered, exact, and deterministically verified.
+highlights:
+  - "Deterministic verifier: no LLM judge, pure substring matching"
+  - "Bundled sociolinguistic fixture file ready for immediate evaluation"
+steps:
+  - "Provide the file path and your target keyword (e.g. 'hella')"
+  - "The agent scans every line and returns the exact matches in order"
